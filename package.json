@@ -1,5 +1,5 @@
 {
-  "name": "devnology-test",
+  "name": "api-links-tech-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vanderleimiguel/devnology-test.git"
+    "url": "git+https://github.com/vanderleimiguel/api-links-tech-backend.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vanderlei Miguel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vanderleimiguel/devnology-test/issues"
+    "url": "https://github.com/vanderleimiguel/api-links-tech-backend/issues"
   },
-  "homepage": "https://github.com/vanderleimiguel/devnology-test#readme",
+  "homepage": "https://github.com/vanderleimiguel/api-links-tech-backend#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
