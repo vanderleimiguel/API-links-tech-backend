@@ -16,8 +16,8 @@ const createLinkService = async link => {
 }
 
 const updateLinkService = async (id, linkEdited) => {
-  const newLinkEdited = new LinkEntity(LinkEdited)
-  newLinkEdited.validObjectBody()
+  const newLinkEdited = new LinkEntity(linkEdited)
+  newLinkEdited.validate()
   const newLinkEditedValidated = { ...newLinkEdited.getLink() }
   const updateLink = await Link.findByIdAndUpdate(id, newLinkEditedValidated)
   return updateLink

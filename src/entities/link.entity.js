@@ -20,3 +20,5 @@ class LinkEntity {
     }
   }
 }
+
+module.exports = LinkEntity
