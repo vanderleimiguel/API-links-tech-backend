@@ -1,11 +1,14 @@
+const express = require('express')
 const connectDataBase = require('../src/databases/mongo/connection/database')
 const linkRoute = require('../src/routes/link.route')
 
 const port = 3000
+const app = express()
+
+app.use(express.json())
 
 const request = require('request')
 const cheerio = require('cheerio')
-const { application } = require('express')
 
 request('https://devgo.com.br/', function (err, res, body) {
   if (err) console.log('Erro: ' + err)
@@ -18,11 +21,11 @@ request('https://devgo.com.br/', function (err, res, body) {
     var title = $(item).find('.blog-article-card-title a').text()
     var link = $(item).find('.blog-article-card-title a href').text()
 
-    links.push(link)
     titles.push(title)
+    links.push(link)
 
-    console.log(links)
     console.log(titles)
+    console.log(links)
   })
 })
 
