@@ -20,7 +20,7 @@
   "paths": {
     "/links/create": {
       "post": {
-        "summary": "Criar um novo Personagem",
+        "summary": "Create new link",
         "tags": ["Links"],
         "requestBody": {
           "content": {
@@ -29,28 +29,28 @@
                 "$ref": "#/components/schemas/link"
               },
               "examples": {
-                "character": {
+                "link": {
                   "value": {
                     "title": "Beta Seven",
                     "url": "https://rickandmortyapi.com/api/character/avatar/36.jpeg"
                     
                   }
                 }
-              },
-              "responses": {
-                "400": {
-                  "description": "Bad request"
-                },
-                "201": {
-                  "description": "Link Created",
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "type": "object",
-                        "$ref": "#/components/schemas/link"
-                      }
-                    }
-                  }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request"
+          },
+          "201": {
+            "description": "Link Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/link"
                 }
               }
             }
@@ -60,7 +60,7 @@
     },
     "/links/": {
       "get": {
-        "summary": "Busca todos os personagens",
+        "summary": "Find all links",
         "tags": ["Links"],
         "responses": {
           "200": {
@@ -71,6 +71,22 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/link"
+                  },
+                  "responses": {
+                    "400": {
+                      "description": "Bad request"
+                    },
+                    "201": {
+                      "description": "Link Created",
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "type": "object",
+                            "$ref": "#components/schemas/link"
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -81,13 +97,13 @@
     },
     "/links/update/{id}": {
       "put": {
-        "summary": "Editar um personagem pelo ID",
+        "summary": "Update link",
         "tags": ["Links"],
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Id the Character to be update",
+            "description": "Id the Link to be update",
             "required": true
           }
         ],
@@ -98,28 +114,28 @@
                 "$ref": "#components/schemas/link"
               },
               "examples": {
-                "character": {
+                "link": {
                   "value": {
                     "title": "Beta Seven",
                     "url": "https://rickandmortyapi.com/api/character/avatar/36.jpeg"
                     
                   }
                 }
-              },
-              "responses": {
-                "400": {
-                  "description": "Bad request"
-                },
-                "200": {
-                  "description": "Character Updated",
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "type": "object",
-                        "$ref": "#components/schemas/link"
-                      }
-                    }
-                  }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad request"
+          },
+          "200": {
+            "description": "Link Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#components/schemas/link"
                 }
               }
             }
@@ -135,7 +151,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "Id the Character to be deleted",
+            "description": "Id the link to be deleted",
             "required": true
           }
         ],

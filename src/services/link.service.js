@@ -1,7 +1,7 @@
 const Link = require('../databases/mongo/schema/link')
 const LinkEntity = require('../entities/link.entity')
 
-const findAllLinkService = async () => {
+const findAllLinksService = async () => {
   const allLink = await Link.find()
   return allLink
 }
@@ -28,7 +28,7 @@ const deleteLinkService = async id => {
 }
 
 module.exports = {
-  findAllLinkService,
+  findAllLinksService,
   createLinkService,
   updateLinkService,
   deleteLinkService

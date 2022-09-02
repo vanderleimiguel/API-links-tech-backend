@@ -2,7 +2,7 @@ const linkService = require('../services/link.service')
 const mongoose = require('mongoose')
 
 const findAllLinksController = async (req, res) => {
-  const allLinks = await linkService.findAllLinkService()
+  const allLinks = await linkService.findAllLinksService()
   if (allLinks.length == 0) {
     return res.status(404).send({ message: 'No links found' })
   }
