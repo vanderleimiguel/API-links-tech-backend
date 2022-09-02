@@ -1,0 +1,176 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Links API",
+    "description": "API from Links"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "DEV"
+    },
+    {
+      "url": "",
+      "description": "PROD"
+    }
+  ],
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/links/create": {
+      "post": {
+        "summary": "Criar um novo Personagem",
+        "tags": ["Links"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/link"
+              },
+              "examples": {
+                "character": {
+                  "value": {
+                    "title": "Beta Seven",
+                    "url": "https://rickandmortyapi.com/api/character/avatar/36.jpeg"
+                    
+                  }
+                }
+              },
+              "responses": {
+                "400": {
+                  "description": "Bad request"
+                },
+                "201": {
+                  "description": "Link Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/link"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/links/": {
+      "get": {
+        "summary": "Busca todos os personagens",
+        "tags": ["Links"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/link"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/links/update/{id}": {
+      "put": {
+        "summary": "Editar um personagem pelo ID",
+        "tags": ["Links"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id the Character to be update",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/link"
+              },
+              "examples": {
+                "character": {
+                  "value": {
+                    "title": "Beta Seven",
+                    "url": "https://rickandmortyapi.com/api/character/avatar/36.jpeg"
+                    
+                  }
+                }
+              },
+              "responses": {
+                "400": {
+                  "description": "Bad request"
+                },
+                "200": {
+                  "description": "Character Updated",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "$ref": "#components/schemas/link"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/links/delete/{id}": {
+      "delete": {
+        "summary": "Delete link",
+        "tags": ["Links"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id the Character to be deleted",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Not found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#components/schemas/link"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+    
+  "components": {
+    "schemas": {
+      "link": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      }
+    }
+  }
+}
