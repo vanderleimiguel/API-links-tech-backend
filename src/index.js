@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const connectDataBase = require('../src/databases/mongo/connection/database')
 const linkRoute = require('../src/routes/link.route')
