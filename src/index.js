@@ -1,12 +1,17 @@
 require('dotenv').config()
 const express = require('express')
-const connectDataBase = require('../src/databases/mongo/connection/database')
-const linkRoute = require('../src/routes/link.route')
+const cors = require('cors')
+const connectDataBase = require('./databases/mongo/connection/database')
+const linkRoute = require('./routes/link.route')
 
 const port = 3000
 const app = express()
 
+connectDataBase()
+
 app.use(express.json())
+app.use(cors())
+app.use('/links', linkRoute)
 
 const request = require('request')
 const cheerio = require('cheerio')
