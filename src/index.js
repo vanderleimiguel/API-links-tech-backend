@@ -4,7 +4,7 @@ const cors = require('cors')
 const connectDataBase = require('./databases/mongo/connection/database')
 const linkRoute = require('./routes/link.route')
 
-const port = 3000
+const port = process.env.PORT || 3000
 const app = express()
 
 connectDataBase()
