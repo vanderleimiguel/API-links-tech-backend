@@ -1,4 +1,5 @@
 const crypto = require('node:crypto')
+
 class LinkEntity {
   constructor(link) {
     this.id = link.id ?? crypto.randomUUID()
