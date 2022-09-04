@@ -6,16 +6,11 @@ request('https://devgo.com.br/', function (err, res, body) {
 
   const $ = cheerio.load(body)
 
-  var titles = []
-  var links = []
-  $('.blog-articles-container').each((i, item) => {
-    var title = $(item).find('.blog-article-card-title a').text()
-    var link = $(item).find('.blog-article-card-title a href').text()
+  $('.blog-articles-container').each(function () {
+    var title = $(this).find('.blog-article-card h1 a').text().trim()
+    // var link = $(this).find('.blog-article-card-title a').text().trim()
 
-    titles.push(title)
-    links.push(link)
-
-    console.log(titles)
-    console.log(links)
+    console.log(title)
+    // fs.appendFile('imdb.txt', title)
   })
 })
