@@ -1,6 +1,6 @@
 # API Links Tech Backend
 
-API Links Tech é uma API REST que permite salvar seus links favoritos, com o titulo
+API Links Tech é uma API REST que permite salvar seus links de artigos favoritos, com o titulo
 Foi utilizado o banco de dados Mongo DB Atlas e efetuado o deploy no Heroku
 
 ## Deploy Backend
@@ -12,6 +12,8 @@ https://api-links-tech.herokuapp.com
 https://api-links-tech.herokuapp.com/doc
 
 ## Repositorio Backend
+
+https://github.com/vanderleimiguel/API-links-tech-backend
 
 ## Métodos
 
@@ -53,7 +55,7 @@ url: https://api-links-tech.herokuapp.com/links/delete/${id}
 
 # Código
 
-Utilizado padrão MVR separado por pastas, routes, controllers, services, entities, databases e modllewares para melhor organização e manutenção do codigo
+Utilizado padrão MVC separado por pastas, routes, controllers, services, entities, databases e midllewares para melhor organização e manutenção do codigo
 Na pasta docs foi criado o arquivo swagger melhorando a documentação e testes de rotas
 
 # Desenvolvimento
