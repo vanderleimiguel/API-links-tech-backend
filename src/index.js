@@ -5,7 +5,6 @@ const connectDataBase = require('./databases/mongo/connection/database')
 const linkRoute = require('./routes/link.route')
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./docs/swagger.json')
-const webcrawler = require('./databases/webCrawler/webCrawler')
 
 const port = process.env.PORT || 3000
 const app = express()
