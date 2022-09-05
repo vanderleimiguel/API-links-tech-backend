@@ -10,9 +10,14 @@ const findAllLinksController = async (req, res) => {
 }
 
 const createLinkController = async (req, res) => {
-  const link = req.body
-  const newLink = await linkService.createLinkService(link)
-  res.status(201).send(newLink)
+  try {
+    const link = req.body
+    const newLink = await linkService.createLinkService(link)
+    res.status(201).send(newLink)
+  } catch (err) {
+    console.log(err)
+    res.send(400).send(err.message)
+  }
 }
 
 const updateLinkController = async (req, res) => {
